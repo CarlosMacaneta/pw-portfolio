@@ -2,6 +2,16 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,400;1,200;1,400&family=Open+Sans:ital,wght@0,300;0,400;1,300;1,400&display=swap');
 
+@font-face {
+    font-family: 'Broetown Signature';
+    src: url('http://127.0.0.1:5500/assets/fonts/Broetown Signature.ttf');
+}
+
+@font-face {
+    font-family: 'Rhesmanisa';
+    src: url('http://127.0.0.1:5500/assets/fonts/Rhesmanisa.otf');
+}
+
 :root {
     --blue: #3490dc;
     --gray: #6c757d;
@@ -13,31 +23,31 @@
 }
 
 .bg-blue {
-    background-color: var(--blue);
+    background-color: var(--blue) !important;
 }
 
 .bg-gray {
-    background-color: var(--gray);
+    background-color: var(--gray) !important;
 }
 
 .bg-gray-dark {
-    background-color: var(--gray-dark);
+    background-color: var(--gray-dark) !important;
 }
 
 .bg-light {
-    background-color: var(--light);
+    background-color: var(--light) !important;
 }
 
 .bg-dark {
-    background-color: var(--dark);
+    background-color: var(--dark) !important;
 }
 
 .bg-black {
-    background-color: var(--black);
+    background-color: var(--black) !important;
 }
 
 .bg-white {
-    background-color: var(--white);
+    background-color: var(--white) !important;
 }
 
 .text-white {
@@ -45,15 +55,15 @@
 }
 
 .text-black {
-    color: var(--black);
+    color: var(--black) !important;
 }
 
 .text-blue {
-    color: var(--blue);
+    color: var(--blue) !important;
 }
 
 .text-justify {
-    text-align: justify;
+    text-align: justify !important;
 }
 
 html {
@@ -71,7 +81,7 @@ body {
     color: #212529;
     background-color: var(--light);
     line-height: 1.6;
-    background: url('http://127.0.0.1:5500/img/1.jpg') no-repeat fixed center;
+    background: url('http://127.0.0.1:5500/assets/img/1.jpg') no-repeat fixed center;
     background-size: cover;
 }
 
@@ -84,7 +94,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-size: 2.5rem;
+    font-size: 4.5rem;
+    font-weight: 300;
+    line-height: 1.2
 }
 
 p {
@@ -101,8 +113,8 @@ button {
 }
 
 ul {
-  margin-top: 0;
-  margin-bottom: 1rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
 }
 
 nav {
@@ -110,11 +122,15 @@ nav {
     background-color: rgba(0, 0, 0, 0.2);
 }
 
-.navbar {
-    position: relative;
+.navbar, .navbar .container {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: space-between;
+}
+
+.navbar {
+    position: relative;    
     justify-content: space-between;
     padding: 0.5rem 1rem;
 }
@@ -124,18 +140,11 @@ nav {
     padding-top: 0.32rem;
     padding-bottom: 0.32rem;
     margin-right: 1rem;
-    font-size: 1.125rem;
+    font-family: 'Broetown Signature';
+    font-size: 2rem;
     line-height: inherit;
     white-space: nowrap;
 }
-
-.navbar .container {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-}
-
 
 .navbar-menu {
     display: flex;
@@ -146,7 +155,7 @@ nav {
 
 .nav-menu-item-link {
     display: block;
-    padding: .5rem 1rem
+    padding: .5rem 1rem;
 }
 
 .navbar-brand:hover,
@@ -157,14 +166,13 @@ nav {
 
 .navbar, .navbar-brand, .navbar-brand:hover,
 .navbar-menu, .nav-menu-item, .nav-menu-item-link,
-.nav-menu-item-link:hover {
+.nav-menu-item-link:hover, .contact, .contact:hover {
     color: var(--white);
 }
 
 .nav-menu-item-link {
     overflow: hidden;
     position: relative;
-    border-radius: 5px;
 }
 
 .nav-menu-item-link::after {
@@ -172,7 +180,7 @@ nav {
     content: "";
     height: 155px;
     left: -75px;
-    opacity: .2;
+    opacity: 0.2;
     position: absolute;
     top: -50px;
     transform: rotate(35deg);
@@ -181,14 +189,14 @@ nav {
     z-index: -10;
 }
 
-.nav-menu-item-link:hover {
+.nav-menu-item-link:hover, .contact {
     border-radius: 5px;
     background-color: rgba(0, 0, 0, 0.2);
     border: 1px solid;
     border-color: #040079 #040079 var(--blue) var(--blue);
 }
 
-.nav-menu-item-link:hover::after {
+.nav-menu-item-link:hover::after{
     left: 120%;
     transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
 }
@@ -211,12 +219,80 @@ a:hover {
     text-decoration: underline;
 }
 
+.introducing {
+    margin: 100px auto;
+}
+
+p .signature {
+    font-family: 'Rhesmanisa';
+}
+
+p .skill-desc {
+    color: var(--light);
+    font-size: 1rem;
+    text-transform: uppercase;
+    top: -30px;
+    left: 15px;
+    position: relative;
+    letter-spacing: 2px;
+}
+
+.contact {
+    border: 1px solid #0A3887;
+    padding: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    transition: all .35s;
+    line-height: 40px;
+}
+
+.contact, .contact:after, .nav-menu-item-link
+.contact:hover, .contact:hover:after {
+    border-radius: 5px;
+}
+
+.contact span{
+    position: relative;
+    z-index: 2;
+}
+
+.contact:after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #01072B;
+    transition: all .35s;
+}
+
+.contact:hover {
+    text-decoration: none;
+}
+
+.contact:hover:after {
+    width: 100%;
+}
+
+.lead {
+    font-size: 3rem;
+    font-weight: 300
+}
+
 .container {
     width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
+}
+
+.container, .col-1, .col-2, .col-3,
+.col-4, .col-5, .col-6, .col-7, 
+.col-8, .col-9, .col-10, .col-11, 
+.col-12 {
+    padding-right: 15px;
+    padding-left: 15px;
 }
 
 .row {
@@ -232,8 +308,6 @@ a:hover {
 .col-10, .col-11, .col-12 {
     position: relative;
     width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
 }
 
 @media (min-width: 576px) {
