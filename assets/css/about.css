@@ -1,0 +1,54 @@
+html {
+    color: #fff;
+}
+
+.navbar-brand, .navbar-brand:hover,
+.nav-menu-item-link {
+    color: #fff;
+}
+
+.nav-menu-item-link:hover {
+    color: #fff;
+    border-bottom: 2px solid #fff;
+}
+
+#cv-img {
+    border-radius: 5px;
+    margin: 0;
+    padding: 0;
+}
+
+.col-2 {
+    margin-right: 0;
+    padding-right: 0;
+}
+
+.col-7 {
+    margin-left: 0;
+    padding-left: 0;
+}
+
+ul li, ul li a {
+    color: #cecece;
+    text-decoration: none;
+}
+
+ul li a:hover {
+    color: #cecece;
+    text-decoration: none;
+}
+
+.card {
+    border: 1px solid #09212d10;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.skills {
+    list-style-image: url('../img/icons/checkmark_16px.png');
+    margin-left: 30px;
+}
+
+.skills li {
+    color: #09212D;
+}

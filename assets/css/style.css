@@ -2,24 +2,33 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,400;1,200;1,400&family=Open+Sans:ital,wght@0,300;0,400;1,300;1,400&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
 @font-face {
     font-family: 'Broetown Signature';
-    src: url('http://127.0.0.1:5500/assets/fonts/Broetown Signature.ttf');
+    src: url('../fonts/Broetown Signature.ttf');
 }
 
 @font-face {
     font-family: 'Rhesmanisa';
-    src: url('http://127.0.0.1:5500/assets/fonts/Rhesmanisa.otf');
+    src: url('../fonts/Rhesmanisa.otf');
 }
 
 :root {
+    --primary: #4071F4;
     --blue: #3490dc;
+    --light-blue: #41A4F5;
     --gray: #6c757d;
     --gray-dark: #343a40;
     --light: #f8f9fa;
     --dark: #343a40;
     --black: #000000;
     --white: #ffffff;
+    --black-2: rgba(0,0,0, 0.2)
+}
+
+.primary {
+    background-color: var(--primary);
 }
 
 .bg-blue {
@@ -38,12 +47,20 @@
     background-color: var(--light) !important;
 }
 
+.bg-light-blue {
+    background-color: var(--light-blue);
+}
+
 .bg-dark {
     background-color: var(--dark) !important;
 }
 
+.bg-black-alpha-2 {
+    background-color: var(--black-2) !important;
+}
+
 .bg-black {
-    background-color: var(--black) !important;
+    background-color: var(--black-2) !important;
 }
 
 .bg-white {
@@ -62,8 +79,16 @@
     color: var(--blue) !important;
 }
 
+.text-primary {
+    color: var(--primary);
+}
+
 .text-justify {
     text-align: justify !important;
+}
+
+*, ::after, ::before {
+    box-sizing: border-box
 }
 
 html {
@@ -72,17 +97,19 @@ html {
     -ms-overflow-style: scrollbar;
 }
 
+@-ms-viewport {
+    width: device-width
+}
+
 body {
     margin: 0;
     font-family: 'Nunito', 'Open Sans', sans-serif;
     font-size: 0.9rem;
     font-weight: 400;
     text-align: left;
-    color: #212529;
+    color: #09212D;
     background-color: var(--light);
     line-height: 1.6;
-    background: url('http://127.0.0.1:5500/assets/img/1.jpg') no-repeat fixed center;
-    background-size: cover;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -97,6 +124,9 @@ h1 {
     font-size: 4.5rem;
     font-weight: 300;
     line-height: 1.2
+}
+.mt-5 {
+    margin-top: 20px;
 }
 
 p {
@@ -119,7 +149,6 @@ ul {
 
 nav {
     display: block;
-    background-color: rgba(0, 0, 0, 0.2);
 }
 
 .navbar, .navbar .container {
@@ -135,13 +164,16 @@ nav {
     padding: 0.5rem 1rem;
 }
 
+.shadow {
+    box-shadow: 3px 3px 3px rgba(9, 33, 45, 0.2);
+}
+
 .navbar-brand {
     display: inline-block;
     padding-top: 0.32rem;
     padding-bottom: 0.32rem;
     margin-right: 1rem;
-    font-family: 'Broetown Signature';
-    font-size: 2rem;
+    font-family: 'Pacifico', cursive;
     line-height: inherit;
     white-space: nowrap;
 }
@@ -156,6 +188,7 @@ nav {
 .nav-menu-item-link {
     display: block;
     padding: .5rem 1rem;
+    margin-right: 5px;
 }
 
 .navbar-brand:hover,
@@ -166,8 +199,8 @@ nav {
 
 .navbar, .navbar-brand, .navbar-brand:hover,
 .navbar-menu, .nav-menu-item, .nav-menu-item-link,
-.nav-menu-item-link:hover, .contact, .contact:hover {
-    color: var(--white);
+.nav-menu-item-link:hover {
+    color: #09212D;
 }
 
 .nav-menu-item-link {
@@ -175,33 +208,14 @@ nav {
     position: relative;
 }
 
-.nav-menu-item-link::after {
-    background: var(--white);
-    content: "";
-    height: 155px;
-    left: -75px;
-    opacity: 0.2;
-    position: absolute;
-    top: -50px;
-    transform: rotate(35deg);
-    transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
-    width: 50px;
-    z-index: -10;
+.nav-menu-item-link:hover,  .contact {
+    border-bottom: 2px solid #09212D;
 }
 
-.nav-menu-item-link:hover, .contact {
-    border-radius: 5px;
-    background-color: rgba(0, 0, 0, 0.2);
-    border: 1px solid;
-    border-color: #040079 #040079 var(--blue) var(--blue);
+.header-bg {
+    background-color: #454E5C;
 }
 
-.nav-menu-item-link:hover::after{
-    left: 120%;
-    transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-ol,
 ul {
     list-style: none;
     margin: 0;
@@ -219,37 +233,30 @@ a:hover {
     text-decoration: underline;
 }
 
-.introducing {
-    margin: 100px auto;
-}
-
 p .signature {
     font-family: 'Rhesmanisa';
 }
 
-p .skill-desc {
-    color: var(--light);
+.skill-desc {
     font-size: 1rem;
     text-transform: uppercase;
-    top: -30px;
-    left: 15px;
+    color: #09212D;
+    top: -50px;
+    left: 5px;
     position: relative;
     letter-spacing: 2px;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
 }
 
 .contact {
-    border: 1px solid #0A3887;
+    border: 1px solid var(--primary);
     padding: 10px;
     text-transform: uppercase;
     letter-spacing: 2px;
     position: relative;
     transition: all .35s;
     line-height: 40px;
-}
-
-.contact, .contact:after, .nav-menu-item-link
-.contact:hover, .contact:hover:after {
-    border-radius: 5px;
 }
 
 .contact span{
@@ -264,50 +271,37 @@ p .skill-desc {
     left: 0;
     width: 0;
     height: 100%;
-    background: #01072B;
+    background: var(--primary);
     transition: all .35s;
 }
 
 .contact:hover {
     text-decoration: none;
+    color: #ffffff;
 }
 
 .contact:hover:after {
     width: 100%;
 }
 
+.contact, .contact:after, .nav-menu-item-link
+.contact:hover, .contact:hover:after {
+    border-radius: 5px;
+}
+
 .lead {
     font-size: 3rem;
-    font-weight: 300
+    font-weight: 300;
+    padding: 0 !important;
+    margin: 0 !important;
 }
 
 .container {
     width: 100%;
     margin-right: auto;
     margin-left: auto;
-}
-
-.container, .col-1, .col-2, .col-3,
-.col-4, .col-5, .col-6, .col-7, 
-.col-8, .col-9, .col-10, .col-11, 
-.col-12 {
     padding-right: 15px;
     padding-left: 15px;
-}
-
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    margin-right: -15px;
-    margin-left: -15px;
-}
-
-.col-1, .col-2, .col-3,
-.col-4, .col-5, .col-6,
-.col-7, .col-8, .col-9, 
-.col-10, .col-11, .col-12 {
-    position: relative;
-    width: 100%;
 }
 
 @media (min-width: 576px) {
@@ -329,4 +323,216 @@ p .skill-desc {
     .container {
         max-width: 1140px;
     }
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.col-1, .col-2, .col-3,
+.col-4, .col-5, .col-6, .col-7, 
+.col-8, .col-9, .col-10, .col-11, 
+.col-12 {
+    position: relative;
+    min-height: 1px;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.col-1 {
+    -ms-flex: 0 0 8.333333%;
+    flex: 0 0 8.333333%;
+    max-width: 8.333333%
+}
+
+.col-2 {
+    -ms-flex: 0 0 16.666667%;
+    flex: 0 0 16.666667%;
+    max-width: 16.666667%
+}
+
+.col-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+}
+
+.col-4 {
+    -ms-flex: 0 0 33.333333%;
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%
+}
+
+.col-5 {
+    -ms-flex: 0 0 41.666667%;
+    flex: 0 0 41.666667%;
+    max-width: 41.666667%
+}
+
+.col-6 {
+    flex: 0 0 50%;
+    max-width: 50%
+}
+
+.col-7 {
+    -ms-flex: 0 0 58.333333%;
+    flex: 0 0 58.333333%;
+    max-width: 58.333333%
+}
+
+.col-8 {
+    -ms-flex: 0 0 66.666667%;
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%
+}
+
+.col-9 {
+    -ms-flex: 0 0 75%;
+    flex: 0 0 75%;
+    max-width: 75%
+}
+
+.col-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+@media (min-width: 576px) {
+    .col-2 {
+        -ms-flex: 0 0 16.666667%;
+        flex: 0 0 16.666667%;
+        max-width: 16.666667%
+    }
+    
+    .col-3 {
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+    
+    .col-6 {
+        flex: 0 0 50%;
+        max-width: 50%
+    }
+    
+    .col-7 {
+        -ms-flex: 0 0 58.333333%;
+        flex: 0 0 58.333333%;
+        max-width: 58.333333%
+    }
+    
+    .col-8 {
+        -ms-flex: 0 0 66.666667%;
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%
+    }
+    
+    .col-12 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }    
+}
+@media (min-width: 768px) {
+    .col-2 {
+        -ms-flex: 0 0 16.666667%;
+        flex: 0 0 16.666667%;
+        max-width: 16.666667%
+    }
+    
+    .col-3 {
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+    
+    .col-6 {
+        flex: 0 0 50%;
+        max-width: 50%
+    }
+    
+    .col-7 {
+        -ms-flex: 0 0 58.333333%;
+        flex: 0 0 58.333333%;
+        max-width: 58.333333%
+    }
+    
+    .col-8 {
+        -ms-flex: 0 0 66.666667%;
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%
+    }
+    
+    .col-12 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }    
+}
+@media (min-width: 992px) {
+    .col-2 {
+        -ms-flex: 0 0 16.666667%;
+        flex: 0 0 16.666667%;
+        max-width: 16.666667%
+    }
+    
+    .col-3 {
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+    
+    .col-6 {
+        flex: 0 0 50%;
+        max-width: 50%
+    }
+    
+    .col-7 {
+        -ms-flex: 0 0 58.333333%;
+        flex: 0 0 58.333333%;
+        max-width: 58.333333%
+    }
+    
+    .col-8 {
+        -ms-flex: 0 0 66.666667%;
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%
+    }
+    
+    .col-12 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }    
+}
+@media (min-width: 1200px) {
+    .col-2 {
+        -ms-flex: 0 0 16.666667%;
+        flex: 0 0 16.666667%;
+        max-width: 16.666667%
+    }
+    
+    .col-3 {
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+    
+    .col-6 {
+        flex: 0 0 50%;
+        max-width: 50%
+    }
+    
+    .col-7 {
+        -ms-flex: 0 0 58.333333%;
+        flex: 0 0 58.333333%;
+        max-width: 58.333333%
+    }
+    
+    .col-8 {
+        -ms-flex: 0 0 66.666667%;
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%
+    }
+    
+    .col-12 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }    
 }
