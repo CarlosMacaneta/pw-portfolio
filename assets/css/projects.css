@@ -1,0 +1,38 @@
+.proj {
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0.5rem;
+    padding-bottom: 10px;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.filled-rect-round {
+    border: 1px solid #09212D;
+    border-radius: 5px;
+    background-color: #09212D;
+    color: #fff;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 0.3rem;
+    margin-right: 0.2rem;
+}
+
+.outline-button {
+    border: 1px solid #09212D;
+    border-radius: 5px;
+    color: inherit;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 10px;
+}
+
+.outline-button:hover {
+    background-color: #09212D;
+    color: #fff;
+}
