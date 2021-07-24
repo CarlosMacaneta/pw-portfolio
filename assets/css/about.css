@@ -23,7 +23,7 @@ html {
     padding-right: 0;
 }
 
-.col-7 {
+.cv-desc {
     margin-left: 0;
     padding-left: 0;
 }
@@ -51,4 +51,8 @@ ul li a:hover {
 
 .skills li {
     color: #09212D;
+}
+
+.horizontal-separator {
+    border-color: #cecece2c;
 }
