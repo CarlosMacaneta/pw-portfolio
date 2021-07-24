@@ -12,6 +12,11 @@ html {
     border-bottom: 2px solid #fff;
 }
 
+.active {
+    color: #fff;
+    border-bottom: 2px solid #fff;
+}
+
 #cv-img {
     border-radius: 5px;
     margin: 0;

@@ -212,6 +212,10 @@ nav {
     border-bottom: 2px solid #09212D;
 }
 
+.active {
+    border-bottom: 2px solid #09212D;
+}
+
 .header-bg {
     background-color: #454E5C;
 }
